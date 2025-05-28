@@ -15,7 +15,7 @@ public class EtudiantService {
         this.etudiantRepository = etudiantRepository;
     }
 
-    //Fonction pour inscrire un etudiant (Il verifie d'abord si l'etudiant est dans la Base de donnees pour une meme formation. Ensuite S'il a une meme formation on ne l'inscrit pas)
+    //Verification de l'existence d'un etudiant en BD
     public boolean etudiantVerification(Etudiant etudiant){
         boolean verification= true;
         Etudiant etudiantDansLaBD = etudiantRepository.findByemail(etudiant.getEmail());
