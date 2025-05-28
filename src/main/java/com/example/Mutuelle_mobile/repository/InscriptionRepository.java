@@ -10,5 +10,5 @@ import java.util.List;
 public interface InscriptionRepository extends JpaRepository<Inscription, Integer> {
  public List<Inscription> findByEtudiantAndFormation(Etudiant etudiant, Formation formation);
  public List<Inscription> findByEtudiant(Etudiant etudiant);
- public List<Inscription> findyFormation(Formation formation);
+ public List<Inscription> findByFormation(Formation formation);
 }

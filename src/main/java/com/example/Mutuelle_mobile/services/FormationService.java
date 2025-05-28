@@ -19,7 +19,7 @@ public class FormationService {
     //Services
     //Verification de l'existence de la formation dans la BD
      public boolean formationVerification(Formation formation){
-        Formation formationDansLaBD= formationRepository.findbylibelle(formation.getLibelle());
+        Formation formationDansLaBD= formationRepository.findByLibelle(formation.getLibelle());
         boolean verification = true;
          if(formationDansLaBD.getDescription().equals(formation.getDescription())){
              verification = true;
@@ -43,7 +43,7 @@ public class FormationService {
 
     // modification d'une formation dans la BD
     public  String modifierFormation(Formation formation){
-        Formation formationDansLaBd= formationRepository.findbylibelle(formation.getLibelle());
+        Formation formationDansLaBd= formationRepository.findByLibelle(formation.getLibelle());
         formation.setId(formationDansLaBd.getId());
         formationRepository.delete(formationDansLaBd);
         formationRepository.save(formation);
@@ -58,6 +58,6 @@ public class FormationService {
     }
     //formation par libelle.
     public Formation rechercheParLibelle(String libelle){
-        return formationRepository.findbylibelle(libelle);
+        return formationRepository.findByLibelle(libelle);
     }
 }

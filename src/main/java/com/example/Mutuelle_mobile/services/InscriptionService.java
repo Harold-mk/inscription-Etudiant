@@ -77,7 +77,7 @@ public class InscriptionService {
     }
     //recherche de la liste des inscriptions d'une formation
     public List<Inscription>rechercheInscriptionParFormation(Formation formation){
-        return inscriptionRepository.findyFormation(formation);
+        return inscriptionRepository.findByFormation(formation);
     }
     //Recherche des inscriptions pour une formation et un etudiant defini
     public List<Inscription>rechercheInscriptionParEtudiantFormation(Etudiant etudiant,Formation formation){
