@@ -2,7 +2,9 @@ package com.example.Mutuelle_mobile.entites;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Etudiant {
@@ -16,8 +18,8 @@ public class Etudiant {
    private String email;
    private String telephone;
    private Date dateNaissance;
-    @OneToOne(mappedBy = "etudiant", cascade = CascadeType.ALL)
-    private Inscription inscription;
+   @OneToMany(mappedBy = "etudiant", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Inscription> orders = new ArrayList<>();
 
     public Etudiant() {
     }

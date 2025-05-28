@@ -2,6 +2,9 @@ package com.example.Mutuelle_mobile.entites;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Formation {
     @Id
@@ -9,8 +12,8 @@ public class Formation {
     private int id;
     private String libelle;
     private String description;
-    @OneToOne(mappedBy = "formation", cascade = CascadeType.ALL)
-    private Inscription inscription;
+    @OneToMany(mappedBy = "formation", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Inscription> inscriptions = new ArrayList<>();
 
     // Les constructeurs
 
