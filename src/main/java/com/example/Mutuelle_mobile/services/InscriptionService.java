@@ -49,12 +49,7 @@ public class InscriptionService {
     public boolean verificationInscription(Inscription inscription){
         boolean verification ;
         List<Inscription> inscriptionsDansLaBD = inscriptionRepository.findByEtudiantAndFormation(inscription.getEtudiant(),inscription.getFormation());
-        if(inscriptionsDansLaBD==null){
-            verification=false;
-        }
-        else{
-            verification=true;
-        }
+        verification= inscriptionsDansLaBD != null;
         return verification;
     }
     // Recherche de la liste des inscriptions
