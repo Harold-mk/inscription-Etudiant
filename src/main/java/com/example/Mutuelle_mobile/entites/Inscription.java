@@ -13,11 +13,11 @@ public class Inscription {
     private String statutInscription;
     private String anneAcademique;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "ID_ETUDIANT")
     private Etudiant etudiant;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "ID_FORMATION")
     private Formation formation;
 
