@@ -1,4 +1,7 @@
 package com.example.Mutuelle_mobile.repository;
 
-public interface FormationRepository {
+import com.example.Mutuelle_mobile.entites.Formation;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface FormationRepository extends JpaRepository<Formation,Integer> {
 }
